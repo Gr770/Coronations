@@ -1,0 +1,8 @@
+set_coronation_char = {
+	effect = {
+		set_variable = {
+			name = coronation_char_selection
+			value = scope:selected_character
+		}
+	}
+}
