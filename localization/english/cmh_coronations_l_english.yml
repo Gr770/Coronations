@@ -76,8 +76,8 @@
  cmh_coronation_chain.1000.a:0 "Finally! We begin!"
  cmh_coronation_chain.1000.a.tt:0 "You begin the coronation ceremony."
 
- cmh_coronation_chain.1500.t
- cmh_coronation_chain.1500.desc
+ cmh_coronation_chain.1500.t: ""
+ cmh_coronation_chain.1500.desc: ""
  cmh_coronation_chain.1500.a: "What is a name?"
  cmh_coronation_chain.1500.a.tt: "Ponder your options"
 

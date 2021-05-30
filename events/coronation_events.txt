@@ -93,17 +93,9 @@ cmh_coronations.002 = {
 	
 	trigger = {
 		NOT = { has_character_flag = stopping_firing_please }
+		has_religion = religion:christianity_religion
 		OR = {
-			has_faith = faith:catholic
-			has_faith = faith:orthodox
-			has_faith = faith:coptic
-			has_faith = faith:armenian_apostolic
-			has_faith = faith:lollard
-			has_faith = faith:nestorian
-			has_faith = faith:insular_celtic
-		}
-		OR = {
-			exists = root.faith.religious_head
+			exists = faith.religious_head
 			AND = {
 				has_faith = faith:insular_celtic
 				faith:catholic = {
@@ -115,6 +107,8 @@ cmh_coronations.002 = {
 		
 		highest_held_title_tier > 2 # Dukes and above
 		is_independent_ruler = yes
+
+		has_government = feudal_government
 		
 		NOT = {
 			has_trait = coronated_by_head_of_religion
@@ -138,7 +132,6 @@ cmh_coronations.002 = {
 		name = cmh_coronations.002.a
 		custom_tooltip = cmh_coronations.002.a.tt
 		increase_uncoronated_debuff = yes
-		hidden_effect = { remove_character_flag = stopping_firing_please }
 	}
 	
 	option = { # Let's do it now!
@@ -147,17 +140,11 @@ cmh_coronations.002 = {
 				primary_title = {
 					is_contested = yes
 				}
-				has_title = title:e_hre
+				highest_held_title_tier = tier_empire
 			}
 		}
 		name = cmh_coronations.002.b
 		custom_tooltip = cmh_coronations.002.b.tt
-		
-		hidden_effect = {
-			remove_character_flag = can_take_coronations_decision
-			clear_uncoronated_debuff = yes
-			remove_character_flag = stopping_firing_please
-		}
 		trigger_event = {
 			id = cmh_coronation_chain.001
 			days = 3
@@ -171,6 +158,18 @@ cmh_coronations.003 = { # Event that tells you that your vassals dislike you mor
 	title = cmh_coronations.003.t
 	desc = cmh_coronations.003.desc
 	right_portrait = root
+
+	trigger = {
+		NOT = {
+			has_trait = coronated_by_head_of_religion
+			has_trait = coronated_by_high_priest
+			has_trait = coronated_by_bishop
+			has_trait = coronated_warrior_crown
+			has_trait = coronated_gutter_crown
+		}
+		highest_held_title_tier > 2
+		is_independent_ruler = yes
+	}
 
 	immediate = {
 		trigger_event = {
@@ -191,16 +190,12 @@ cmh_coronations.003 = { # Event that tells you that your vassals dislike you mor
 				primary_title = {
 					is_contested = yes
 				}
-				has_title = title:e_hre
+				highest_held_title_tier = tier_empire
 			}
 		}
 		name = cmh_coronations.003.b
 		custom_tooltip = cmh_coronations.003.b.tt
 		
-		hidden_effect = {
-			remove_character_flag = can_take_coronations_decision
-			clear_uncoronated_debuff = yes
-		}
 		trigger_event = {
 			id = cmh_coronation_chain.001
 			days = 3
@@ -213,9 +208,21 @@ cmh_coronations.004 = { # Hidden debuff increaser
 	theme = faith
 	hidden = yes
 
+	trigger = {
+		NOT = {
+			has_trait = coronated_by_head_of_religion
+			has_trait = coronated_by_high_priest
+			has_trait = coronated_by_bishop
+			has_trait = coronated_warrior_crown
+			has_trait = coronated_gutter_crown
+		}
+		highest_held_title_tier > 2
+		is_independent_ruler = yes
+	}
+
 	immediate = {
 		trigger_event = {
-			id = coronation.003
+			id = cmh_coronations.003
 			days = 360
 		}
 		increase_uncoronated_debuff = yes
@@ -288,7 +295,7 @@ cmh_coronation_chain.001 = { # Event for who is coronating you (the pope, a high
 				primary_title = {
 					is_contested = yes
 				}
-				has_title = title:e_hre
+				highest_held_title_tier = tier_empire
 			}
 		}
 		name = cmh_coronation_chain.001.b
@@ -312,7 +319,7 @@ cmh_coronation_chain.001 = { # Event for who is coronating you (the pope, a high
 				primary_title = {
 					is_contested = yes
 				}
-				has_title = title:e_hre
+				highest_held_title_tier = tier_empire
 			}
 		}
 		name = cmh_coronation_chain.001.c
@@ -335,7 +342,7 @@ cmh_coronation_chain.001 = { # Event for who is coronating you (the pope, a high
 				is_contested = yes
 			}
 			NOT = {
-				has_title = title:e_hre
+				highest_held_title_tier = tier_empire
 			}
 		}
 		name = cmh_coronation_chain.001.d
@@ -350,6 +357,11 @@ cmh_coronation_chain.001 = { # Event for who is coronating you (the pope, a high
 			id = cmh_coronation_chain.001 ###
 			days = 3
 		}
+	}
+
+	option = {
+		name = cmh_coronation_chain.001.e
+		custom_tooltip = cmh_coronation_chain.001.e.tt
 	}
 }
 
@@ -838,11 +850,39 @@ cmh_coronation_chain.1500 = {
 	option = {
 		trigger = {
 			is_ai = no
+			any_ancestor = {
+				primary_title = root.primary_title
+				OR = {
+					AND = {
+						is_male = yes
+						root = {
+							is_male = yes
+						}
+					}
+					AND = {
+						is_male = no
+						root = {
+							is_male = no
+						}
+					}
+				}
+			}
 		}
 		name = cmh_coronation_chain.1500.a
 		custom_tooltip = cmh_coronation_chain.1500.a.tt
 		trigger_event = {
 			id = cmh_coronations.001
+		}
+	}
+
+	option = {
+		trigger = {
+			is_ai = no
+		}
+		name = cmh_coronations.001.b
+		custom_tooltip = cmh_coronations.001.b.tt
+		trigger_event = {
+			id = cmh_coronation_chain.2000
 		}
 	}
 
@@ -867,47 +907,58 @@ cmh_coronation_chain.1501 = {
 
 	hidden = yes
 
-	hidden_effect = {
-		save_scope_as = coronation_char
-		add_to_variable_list = {
-			name = coronated_title_rulers
-			target = scope:coronation_char
-		}
-        every_ancestor = {
-			even_if_dead = yes
-            limit = {
-                primary_title = root.primary_title
-				OR = {
-					AND = {
-						is_male = yes
-						scope:coronation_char = {
+	immediate = {
+		hidden_effect = {
+			save_scope_as = coronation_char
+			add_to_variable_list = {
+				name = coronated_title_rulers
+				target = scope:coronation_char
+			}
+			every_ancestor = {
+				even_if_dead = yes
+				limit = {
+					primary_title = root.primary_title
+					OR = {
+						AND = {
 							is_male = yes
+							scope:coronation_char = {
+								is_male = yes
+							}
 						}
-					}
-					AND = {
-						is_male = no
-						scope:coronation_char = {
+						AND = {
 							is_male = no
+							scope:coronation_char = {
+								is_male = no
+							}
 						}
 					}
 				}
-            }
-            scope:coronation_char = {
-				add_to_variable_list = {
-					name = coronated_title_rulers
-					target = prev
+				scope:coronation_char = {
+					add_to_variable_list = {
+						name = coronated_title_rulers
+						target = prev
+					}
 				}
 			}
-        }
-		random_in_list = {
-			variable = coronated_title_rulers
-			save_scope_as = target_char_name
-		}
-		change_first_name = {
-			template_character = scope:target_char_name
+			random_in_list = {
+				variable = coronated_title_rulers
+				save_scope_as = target_char_name
+			}
+			random_list = {
+				20 = {
+					change_first_name = {
+						template_character = scope:target_char_name
+					}
+				}
+				80 = {
+					change_first_name = {
+						template_character = root
+					}
+				}
+			}
 		}
 	}
-
+	
 	option = {
 		name = cmh_coronation_chain.1501.a
 		custom_tooltip = cmh_coronation_chain.1501.a.tt
@@ -916,6 +967,7 @@ cmh_coronation_chain.1501 = {
 			days = -1
 		}
 	}
+
 }
 
 cmh_coronation_chain.2000 = { # Done!
@@ -929,6 +981,10 @@ cmh_coronation_chain.2000 = { # Done!
 	option = { # Woohoo
 		name = cmh_coronation_chain.2000.a
 		custom_tooltip = cmh_coronation_chain.2000.a.tt
+
+		hidden_effect = {
+			clear_uncoronated_debuff = yes
+		}
 		
 		if = {
 			limit = {

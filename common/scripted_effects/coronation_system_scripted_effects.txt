@@ -56,24 +56,10 @@ clear_uncoronated_debuff = {
 }
 
 assign_coronation_traits = {
-	every_living_character = {
+	every_independent_ruler = {
 		if = {
 			limit = {
-				has_title = title:e_hre
-			}
-			add_trait = coronated_by_head_of_religion
-		}
-		else_if = {
-			limit = {
-				OR = {
-					has_faith = faith:catholic
-					has_faith = faith:orthodox
-					has_faith = faith:coptic
-					has_faith = faith:armenian_apostolic
-					has_faith = faith:lollard
-					has_faith = faith:nestorian
-					has_faith = faith:insular_celtic
-				}
+				has_religion = religion:christianity_religion
 				OR = {
 					exists = this.faith.religious_head
 					AND = {
@@ -83,8 +69,24 @@ assign_coronation_traits = {
 						}
 					}
 				}
-				is_independent_ruler = yes
+				highest_held_title_tier = tier_empire
+			}
+			add_trait = coronated_by_head_of_religion
+		}
+		else_if = {
+			limit = {
+				has_religion = religion:christianity_religion
+				OR = {
+					exists = this.faith.religious_head
+					AND = {
+						has_faith = faith:insular_celtic
+						faith:catholic = {
+							exists = religious_head
+						}
+					}
+				}
 				highest_held_title_tier > 2 # Dukes and above
+				has_government = feudal_government
 			}
 			random_list = {
 				5 = {
