@@ -1,0 +1,8 @@
+﻿death_ended_on_coronation_feast_table = {
+	icon = "death_natural.dds"
+}
+
+death_coronation_feast_accident = {
+	public_knowledge = yes
+	icon = "death_natural.dds"
+}

@@ -1,0 +1,36 @@
+﻿### CORONATION
+
+action_get_coronated = {
+	check_create_action = {
+		if = {
+			limit = {
+				OR = {
+					has_faith = faith:catholic
+					has_faith = faith:orthodox
+					has_faith = faith:coptic
+					has_faith = faith:armenian_apostolic
+					has_faith = faith:lollard
+					has_faith = faith:nestorian
+					has_faith = faith:insular_celtic
+				}
+				OR = {
+					exists = root.faith.religious_head
+					AND = {
+						has_faith = faith:insular_celtic
+						faith:catholic = {
+							exists = religious_head
+						}
+					}
+				}
+				has_character_flag = can_take_coronations_decision
+			}
+			try_create_important_action = {
+				important_action_type = action_get_coronated
+				actor = root
+			}
+		}
+	}
+	effect = {
+		open_view_data = decision_detail
+	}
+}

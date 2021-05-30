@@ -1,0 +1,1 @@
+﻿coronation_feast_weight_modifier_value = 7

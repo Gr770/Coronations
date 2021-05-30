@@ -1,0 +1,24 @@
+﻿##############
+# FEAST STUFF#
+##############
+standard_coronation_feast_cooldown_time = 1825
+minor_coronation_feast_cost = 10
+medium_coronation_feast_cost = 50
+major_coronation_feast_cost = 300
+min_default_coronation_feast_events = 2
+max_default_coronation_feast_events = 3
+chance_of_extra_coronation_feast_events = 25
+
+coronation_feast_initial_event_delay = 3
+min_coronation_feast_event_spacing = 10
+max_coronation_feast_event_spacing = 15
+
+max_coronation_feast_duration = {
+	value = max_coronation_feast_event_spacing
+	multiply = {
+		value = max_default_coronation_feast_events
+		subtract = 1 # The first one starts quickly, as specified by coronation_feast_initial_event_delay
+	}
+	add = coronation_feast_initial_event_delay
+	add = 1 # To be sure no values get set on the last tick
+}

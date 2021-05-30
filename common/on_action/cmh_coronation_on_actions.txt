@@ -1,0 +1,45 @@
+﻿on_title_gain = {
+	effect = {
+		
+		# Coronation System On Action Below
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_faith = faith:catholic
+						has_faith = faith:orthodox
+						has_faith = faith:coptic
+						has_faith = faith:armenian_apostolic
+						has_faith = faith:lollard
+						has_faith = faith:nestorian
+						has_faith = faith:insular_celtic
+					}
+					OR = {
+						exists = root.faith.religious_head
+						AND = {
+							has_faith = faith:insular_celtic
+							faith:catholic = {
+								exists = religious_head
+							}
+						}
+					}
+					NOT = { faith.religious_head = THIS }
+					highest_held_title_tier > 2 # Dukes and above
+					is_independent_ruler = yes
+					
+					NOT = {
+						has_trait = coronated_by_head_of_religion
+						has_trait = coronated_by_high_priest
+						has_trait = coronated_by_bishop
+						has_trait = coronated_warrior_crown
+						has_trait = coronated_gutter_crown
+					}
+				}
+			}
+			trigger_event = {
+				id = cmh_coronations.002
+				days = 3
+			}
+		}
+	}
+}

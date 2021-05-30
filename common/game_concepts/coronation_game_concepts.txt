@@ -1,0 +1,4 @@
+﻿coronation = {
+	texture = "gfx/interface/icons/event_types/type_faith.dds"
+	parent = faith
+}

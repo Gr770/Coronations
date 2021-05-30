@@ -1,0 +1,99 @@
+﻿GetReligiousFigurePerformingCoronation = {
+	type = character
+	
+	text = {
+		trigger = {
+			has_character_flag = getting_coronated_by_head_of_religion
+		}
+		localization_key = getting_coronated_by_head_of_religion_loc
+	}
+	
+	text = {
+		trigger = {
+			has_character_flag = getting_coronated_by_high_priest
+		}
+		localization_key = getting_coronated_by_high_priest_loc
+	}
+	
+	text = {
+		trigger = {
+			has_character_flag = getting_coronated_by_bishop
+		}
+		localization_key = getting_coronated_by_bishop_loc
+	}
+	
+	text = {
+		localization_key = getting_coronated_by_bishop_loc
+	}
+}
+
+GetReligiousFigurePerformingCoronationFreeReason = {
+	type = character
+	
+	text = {
+		trigger = {
+			piety > major_piety_value
+			opinion = {
+				target = faith.religious_head
+				value >= 50
+			}
+		}
+		localization_key = coronation_chain.0003.coronation.popereason.c
+	}
+	
+	text = {
+		trigger = {
+			opinion = {
+				target = faith.religious_head
+				value >= 50
+			}
+		}
+		localization_key = coronation_chain.0003.coronation.popereason.a
+	}
+	
+	text = {
+		trigger = {
+			piety > major_piety_value
+		}
+		localization_key = coronation_chain.0003.coronation.popereason.b
+	}
+}
+
+GetCoronationTrait = {
+	type = character
+	
+	text = {
+		trigger = {
+			has_character_flag = getting_coronated_by_head_of_religion
+		}
+		localization_key = trait_coronated_by_head_of_religion
+	}
+	
+	text = {
+		trigger = {
+			has_character_flag = getting_coronated_by_high_priest
+		}
+		localization_key = trait_coronated_by_high_priest
+	}
+	
+	text = {
+		trigger = {
+			has_character_flag = getting_coronated_by_bishop
+		}
+		localization_key = trait_coronated_by_bishop
+	}
+	
+	text = {
+		trigger = {
+			faith = { has_doctrine_parameter = can_perform_coronations_2_stage } ###
+		}
+		localization_key = trait_coronated_formal
+	}
+	
+	text = {
+		trigger = {
+			faith = { has_doctrine_parameter = can_perform_coronations_1_stage } ###
+		}
+		localization_key = trait_coronated_celebration
+	}
+}

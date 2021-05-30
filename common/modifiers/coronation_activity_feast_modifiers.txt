@@ -1,0 +1,181 @@
+﻿coronation_feast_strategy_discussions_modifier = {
+	icon = coronation_feast_positive
+	martial = 2
+}
+
+coronation_feast_cavalry_insight_modifier = {
+	icon = coronation_feast_positive
+	light_cavalry_damage_mult = 0.15
+	light_cavalry_toughness_mult = 0.15
+}
+
+coronation_feast_heavy_infantry_insight_modifier = {
+	icon = coronation_feast_positive
+	heavy_infantry_damage_mult = 0.15
+	heavy_infantry_toughness_mult = 0.15
+}
+
+coronation_feast_skirmishers_insight_modifier = {
+	icon = coronation_feast_positive
+	skirmishers_damage_mult = 0.15
+	skirmishers_toughness_mult = 0.15
+}
+
+coronation_feast_archers_insight_modifier = {
+	icon = coronation_feast_positive
+	archers_damage_mult = 0.15
+	archers_toughness_mult = 0.15
+}
+
+coronation_feast_pikemen_insight_modifier = {
+	icon = coronation_feast_positive
+	pikemen_damage_mult = 0.15
+	pikemen_toughness_mult = 0.15
+}
+
+coronation_feast_better_safe_than_sorry_modifier = {
+	icon = coronation_feast_positive
+	defender_advantage = 10
+}
+
+coronation_feast_overly_safe_rather_than_sorry_modifier = {
+	icon = coronation_feast_positive
+	defender_advantage = 10
+	hostile_scheme_resistance_add = 10
+}
+
+coronation_feast_silenced_a_disruptive_guest = {
+	icon = coronation_feast_positive
+	monthly_prestige = 1
+}
+
+coronation_feast_bad_reaction_to_food = {
+	icon = coronation_feast_negative
+	health = -1
+}
+
+coronation_feast_had_good_fight_modifier = {
+	icon = coronation_feast_positive
+	stress_loss_mult = 0.25
+}
+
+coronation_feast_loyal_servantry_modifier = {
+	icon = coronation_feast_positive
+	hostile_scheme_resistance_mult = 0.2
+}
+
+coronation_feast_higher_standards_modifier = {
+	icon = coronation_feast_positive
+	monthly_prestige = 1
+}
+
+coronation_feast_scholarly_confidence_modifier = {
+	icon = coronation_feast_positive
+	stress_gain_mult = -0.25
+	learning = -1
+}
+
+coronation_feast_gratifying_complaints_modifier = {
+	icon = coronation_feast_positive
+	stress_gain_mult = -0.25
+	stress_loss_mult = 0.25
+}
+
+coronation_feast_life_reaffirmed_modifier = {
+	icon = coronation_feast_positive
+	stress_gain_mult = -0.5
+	health = 0.5
+}
+
+coronation_feast_reinvigorated_by_friend_modifier = {
+	icon = coronation_feast_positive
+	health = 1
+}
+
+coronation_feast_practiced_secrecy_modifier = {
+	icon = coronation_feast_positive
+	intrigue = 2
+	health = 0.25
+}
+
+coronation_feast_showed_great_restraint_modifier = {
+	icon = coronation_feast_positive
+	diplomacy = 1
+	learning = 1
+}
+
+coronation_feast_bad_form_with_rival_modifier = {
+	icon = coronation_feast_negative
+	stress_gain_mult = 0.2
+	health = -0.25
+}
+
+coronation_feast_had_interesting_conversation_modifier = {
+	icon = coronation_feast_positive
+	diplomacy = 1
+	learning = 1
+}
+
+coronation_feast_bought_more_drink_modifier = {
+	icon = drink_positive
+	monthly_prestige = 0.5
+}
+
+coronation_feast_good_food_modifier = {
+	icon = coronation_feast_positive
+	health = 1
+}
+
+coronation_feast_household_efforts_modifier = {
+	icon = coronation_feast_positive
+	direct_vassal_opinion = 5
+	courtier_and_guest_opinion = 10
+}
+
+coronation_feast_raucous_entertainment_modifier = {
+	icon = coronation_feast_positive
+	stress_gain_mult = -0.2
+	health = 0.5
+}
+
+coronation_feast_suspicious_of_food_modifier = {
+	icon = coronation_feast_positive
+	intrigue = 1
+	hostile_scheme_resistance_mult = 0.3
+}
+
+coronation_feast_display_of_ruthlessness_modifier = {
+	icon = coronation_feast_positive
+	dread_gain_mult = 0.25
+	dread_decay_mult = -0.5
+}
+
+coronation_feast_bird_based_exercise_modifier = {
+	icon = coronation_feast_positive
+	learning = 1
+	health = 1
+}
+
+coronation_feast_livestock_at_coronation_feast_modifier = {
+	icon = coronation_feast_positive
+	stress_gain_mult = -0.25
+	light_cavalry_damage_mult = 0.1
+	heavy_cavalry_damage_mult = 0.1
+}
+
+coronation_feast_blew_off_steam_modifier = {
+	icon = coronation_feast_positive
+	diplomacy = 1
+	health = 0.5
+}
+
+coronation_feast_hearty_diet_modifier = {
+	icon = drink_positive
+	health = 1
+}
+
+coronation_feast_obsessed_with_garum_modifier = {
+	icon = drink_positive
+	stress_gain_mult = -0.2
+	health = 0.5
+}

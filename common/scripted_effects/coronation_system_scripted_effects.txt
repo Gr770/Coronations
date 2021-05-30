@@ -1,0 +1,102 @@
+﻿increase_uncoronated_debuff = {
+	if = {
+		limit = {
+			has_character_modifier = uncoronated_modifier_6
+		}
+		# Nothing
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = uncoronated_modifier_5
+		}
+		remove_character_modifier = uncoronated_modifier_5
+		add_character_modifier = uncoronated_modifier_6
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = uncoronated_modifier_4
+		}
+		remove_character_modifier = uncoronated_modifier_4
+		add_character_modifier = uncoronated_modifier_5
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = uncoronated_modifier_3
+		}
+		remove_character_modifier = uncoronated_modifier_3
+		add_character_modifier = uncoronated_modifier_4
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = uncoronated_modifier_2
+		}
+		remove_character_modifier = uncoronated_modifier_2
+		add_character_modifier = uncoronated_modifier_3
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = uncoronated_modifier_1
+		}
+		remove_character_modifier = uncoronated_modifier_1
+		add_character_modifier = uncoronated_modifier_2
+	}
+	else = {
+		add_character_modifier = uncoronated_modifier_1
+	}
+}
+
+clear_uncoronated_debuff = {
+	remove_character_modifier = uncoronated_modifier_1
+	remove_character_modifier = uncoronated_modifier_2
+	remove_character_modifier = uncoronated_modifier_3
+	remove_character_modifier = uncoronated_modifier_4
+	remove_character_modifier = uncoronated_modifier_5
+	remove_character_modifier = uncoronated_modifier_6
+	# Maybe add lingering modifiers here if you took too long?
+}
+
+assign_coronation_traits = {
+	every_living_character = {
+		if = {
+			limit = {
+				has_title = title:e_hre
+			}
+			add_trait = coronated_by_head_of_religion
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_faith = faith:catholic
+					has_faith = faith:orthodox
+					has_faith = faith:coptic
+					has_faith = faith:armenian_apostolic
+					has_faith = faith:lollard
+					has_faith = faith:nestorian
+					has_faith = faith:insular_celtic
+				}
+				OR = {
+					exists = this.faith.religious_head
+					AND = {
+						has_faith = faith:insular_celtic
+						faith:catholic = {
+							exists = religious_head
+						}
+					}
+				}
+				is_independent_ruler = yes
+				highest_held_title_tier > 2 # Dukes and above
+			}
+			random_list = {
+				5 = {
+					add_trait = coronated_by_head_of_religion
+				}
+				45 = {
+					add_trait = coronated_by_high_priest
+				}
+				50 = {
+					add_trait = coronated_by_bishop
+				}
+			}
+		}
+	}
+}

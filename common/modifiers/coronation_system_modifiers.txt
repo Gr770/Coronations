@@ -1,0 +1,51 @@
+﻿uncoronated_modifier_1 = {
+	icon = social_negative
+	vassal_opinion = -5
+}
+
+uncoronated_modifier_2 = {
+	icon = social_negative
+	vassal_opinion = -10
+	direct_vassal_opinion = -5
+}
+
+uncoronated_modifier_3 = {
+	icon = social_negative
+	vassal_opinion = -15
+	direct_vassal_opinion = -10
+}
+
+uncoronated_modifier_4 = {
+	icon = social_negative
+	vassal_opinion = -25
+	direct_vassal_opinion = -15
+	religious_vassal_opinion = -5
+}
+
+uncoronated_modifier_5 = {
+	icon = social_negative
+	vassal_opinion = -35
+	direct_vassal_opinion = -25
+	religious_vassal_opinion = -10
+}
+
+uncoronated_modifier_6 = {
+	icon = social_negative
+	vassal_opinion = -50
+	direct_vassal_opinion = -35
+	religious_vassal_opinion = -15
+}
+
+religious_coronation_high_cost = {
+	vassal_opinion = 10
+	monthly_prestige = 1
+}
+
+religious_coronation_medium_cost = {
+	vassal_opinion = 5
+	monthly_prestige = 0.5
+}
+
+religious_coronation_low_cost = {
+	monthly_prestige = -0.5
+}

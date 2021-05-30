@@ -1,0 +1,60 @@
+﻿hold_coronation_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+
+	desc = hold_coronation_decision_desc
+	selection_tooltip = hold_coronation_decision_tt
+
+	is_shown = {
+		is_ruler = yes
+		has_character_flag = can_take_coronations_decision
+	}
+
+	effect = {
+		remove_character_flag = can_take_coronations_decision
+		clear_uncoronated_debuff = yes
+		if = {
+			limit = {
+				faith = {
+					has_doctrine_parameter = can_perform_coronations_3_stage
+				}
+			}
+			trigger_event = {
+				id = coronation_chain.0001
+				days = 1
+			}
+		}
+		else_if = {
+			limit = {
+				faith = {
+					has_doctrine_parameter = can_perform_coronations_2_stage
+				}
+			}
+			trigger_event = {
+				id = coronation_chain.0002
+				days = 1
+			}
+		}
+		else_if = {
+			limit = {
+				faith = {
+					has_doctrine_parameter = can_perform_coronations_1_stage
+				}
+			}
+			trigger_event = {
+				id = coronation_chain.1000
+				days = 1
+			}
+		}
+	}
+	
+	ai_check_interval = 30
+
+	ai_potential = {
+		is_ruler = yes
+		has_character_flag = can_take_coronations_decision
+	}
+
+	ai_will_do = {
+		base = 25
+	}
+}

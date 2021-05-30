@@ -1,5 +1,149 @@
 ﻿l_english:
-cmh_coronations.001.t: "What is a Name?"
-cmh_coronations.001.desc: "    The name I have been given at birth has represented myself thus far, however I may be expected to take on a more #EMP regnal#! name. My legitimacy could be highlighted if I took upon the first name of one of my forebears.\n #BOL Select an ancestor to take a name."
-cmh_coronations.001.a: "I shall take this as my name!"
-cmh_coronations.001.b: "I shall keep [GetPlayer.GetFirstNameNoTooltip] as my name!"
+ cmh_coronations.001.t: "What is a Name?"
+ cmh_coronations.001.desc: "    The name I have been given at birth has represented myself thus far, however I may be expected to take on a more #EMP regnal#! name. My legitimacy could be highlighted if I took upon the first name of one of my forebears.\n #BOL Select an ancestor to take a name."
+ cmh_coronations.001.a: "I shall take this as my name!"
+ cmh_coronations.001.a.tt: "Set your Regnal Name to match selected character (sets to self if not set)"
+ cmh_coronations.001.b: "I shall keep [GetPlayer.GetFirstNameNoTooltip] as my name!"
+ cmh_coronations.001.b.tt: "Keep your given name as your Regnal Name"
+
+ cmh_coronations.002.t: "To Wear a Crown"
+ cmh_coronations.002.desc: "I may sit on the throne, but I do not yet wear my crown. I will need to commit myself to the proper rites of a new ruler if my vassals are to recognize me, and achieve the recognition from all the necessary authorities. This will need to be done soon, doubtless my vassals will see it as a sign of weakness if I was to fail to do so."
+ cmh_coronations.002.a: "There are more pressing matters to attend to first."
+ cmh_coronations.002.a.tt: "The option to prepare for your coronation will appear in the decision tab. Your vassals will get a stacking negative opinion modifier the longer you take."
+ cmh_coronations.002.b: "I will begin preparations immediately!"
+ cmh_coronations.002.b.tt: "You will begin preparing for your coronation."
+
+ cmh_coronations.003.t: "Awaiting a Coronation"
+ cmh_coronations.003.desc: "It has been a year, and the [GetPlayer.GetFaith.ReligiousHeadName] has yet to crown me. My vassals are unhappy about this, and have already begun talking more and more openly that I am not a proper [GetPlayer.GetTitleTierName] because of this. This is a situation that will need to be rectified soon, whether I like it or not... "
+ cmh_coronations.003.a: "I am not ready!"
+ cmh_coronations.003.a.tt: "The decision will remain in your decision tab, and vassal relations will continue to worsen."
+ cmh_coronations.003.b: "Fine! We prepare now!"
+ cmh_coronations.003.b.tt: "You begin preparations for the coronation."
+
+ cmh_coronations.004.a: """
+
+ cmh_coronation_chain.001.t:0 "The Coronation"
+ cmh_coronation_chain.001.desc:0 "The greatest decision for a [GetPlayer.GetFaith.GetAdjective] ruler such as I will be who, exactly, crowns me. Of course, the [GetPlayer.GetFaith.ReligiousHeadName] would be truly illustrious, but they would no doubt ask for something in return. A [GetPlayer.GetFaith.PriestMale] could also be expensive, but would be in no position to demand quite so much. Or of course I can order any old [GetPlayer.GetFaith.BishopMale] to do it, though I can imagine the whispering of the court even now..."
+ cmh_coronation_chain.001.a:0 "Nobody less than the [GetPlayer.GetFaith.ReligiousHeadName] is fit to crown me!"
+ cmh_coronation_chain.001.a.tt:0 "You will request the [GetPlayer.GetFaith.ReligiousHeadName] to attend your coronation. Unless we are very friendly with them, or seen as an exceptionally pious figure, they will no doubt carry a hefty demand."
+ cmh_coronation_chain.001.b:0 "A [GetPlayer.GetFaith.PriestMale] will do me fine."
+ cmh_coronation_chain.001.b.tt:0 "You will have to pay for the coronation, but the [GetPlayer.GetFaith.PriestMale] will make no further demands."
+ cmh_coronation_chain.001.c:0 "I'm not going to ruin the treasury for someone to put things on my head."
+ cmh_coronation_chain.001.c.tt:0 "You will have a [GetPlayer.GetFaith.BishopMale] crown you, though this will earn you little respect."
+ cmh_coronation_chain.001.d: "We will have to do it at war to secured my claim."
+ cmh_coronation_chain.001.d.tt: "You will have a [GetPlayer.GetFaith.BishopMale] crown you in the field, though this will earn you less respect."
+
+ cmh_coronation_chain.002.t:0 "Opening my Purse"
+ cmh_coronation_chain.002.desc:0 "I must decide how much exactly I will spend on my coronation ceremony. The more I spend, the more prestigious and lavish the affair will be, and doubtless its effects on my coffers. Still, my vassals will respect a show of wealth..."
+ cmh_coronation_chain.002.a:0 "Cost means nothing on such an auspicious day!"
+ cmh_coronation_chain.002.a.tt:0 "You will spend a large amount, for an equal amount of benefits."
+ cmh_coronation_chain.002.b:0 "A moderate amount, not too much, not too little."
+ cmh_coronation_chain.002.b.tt:0 "You will spend a moderate amount on the ceremony."
+ cmh_coronation_chain.002.c:0 "Something austere would be... brave?"
+ cmh_coronation_chain.002.c.tt:0 "It'll earn you little respect, but you'll save your coin!"
+ cmh_coronation_chain.002.d:0 "On second thought, maybe I should have someone else crown me."
+ cmh_coronation_chain.002.d.tt:0 "You will be able to change who is set to crown you."
+ 
+ cmh_coronation_chain.003.t:0 "The [GetPlayer.GetFaith.ReligiousHeadName]'s demand"
+ cmh_coronation_chain.003.desc:0 "The [GetPlayer.GetFaith.ReligiousHeadName] has responded to my request and has requested..."
+ cmh_coronation_chain.003.desc.a:0 "a sum of money. Stating that it would be simply too costly for the [GetPlayer.GetFaith.ReligiousHeadName] to cover the cost of travel and preparation, the [GetPlayer.GetFaith.ReligiousHeadName] has agreed to my request as long as I cover the cost and donate to their coffers. In the name of [GetPlayer.GetFaith.HighGodName], of course."
+ cmh_coronation_chain.003.desc.b:0 "a public admission of faith and humility in their name. No doubt it would be a slight humiliation, but at least people would forget with time. Hopefully."
+ cmh_coronation_chain.003.desc.c:0 "for me to disavow my rather sinful family member. Blood is thicker than all, but the needs of the state do come first after all."
+ cmh_coronation_chain.003.desc.d:0 "give them one of my family members as a hostage. The letter used flowery wording like this simply being an opportunity for them to enjoy [GetPlayer.GetFaith.GetReligiousHead.GetHerHis] 'hospitality' and learn of their lands, but it is clear that this is little more than giving a prisoner..."
+ cmh_coronation_chain.003.desc.e:0 "return lands the [GetPlayer.GetFaith.ReligiousHeadName] claims to rightfully belong to their worldly realms. A loss of land, and no doubt a massive slight to whoever currently rules it in my stead..."
+ cmh_coronation_chain.003.desc.f:0 "nothing! Citing my [GetPlayer.Custom('GetReligiousFigurePerformingCoronationFreeReason')], they have stated they will be making their way immediately for the coronation!"
+ cmh_coronation_chain.003.desc.g:0 "nothing! Despite how much I deserve my title, the [GetPlayer.GetFaith.ReligiousHeadName] has had the gall to refuse my rightful request!"
+ 
+ cmh_coronation_chain.003.coronation.popereason.a:0 "longstanding good relations with them"
+ cmh_coronation_chain.003.coronation.popereason.b:0 "exemplary [GetPlayer.GetFaith.GetAdherentNameNoTooltip] behavior"
+ cmh_coronation_chain.003.coronation.poprereason.c:0 "absolute piety and our personal friendship"
+ 
+ cmh_coronation_chain.003.a:0 "I accept the request"
+ cmh_coronation_chain.003.a.tt:0 "You will give the pope what they want, in return for the coronation"
+ cmh_coronation_chain.003.b:0 "No! They ask too much!"
+ cmh_coronation_chain.003.b.tt:0 "You will refuse the [GetPlayer.GetFaith.ReligiousHeadName]'s request, no doubt angering them. You will not be able to ask the [GetPlayer.GetFaith.ReligiousHeadName] to crown me for six months."
+ cmh_coronation_chain.003.c:0 "I accept the request! Send my thanks!"
+ cmh_coronation_chain.003.c.tt:0 "The [GetPlayer.GetFaith.ReligiousHeadName] will crown you for free!"
+ cmh_coronation_chain.003.d:0 "Bastard!"
+ cmh_coronation_chain.003.d.tt:0 "The [GetPlayer.GetFaith.ReligiousHeadName] will not crown you due to poor relations or faith. You will not be able to ask the [GetPlayer.GetFaith.ReligiousHeadName] to crown me for six months."
+ 
+ cmh_coronation_chain.004.t:0 ""
+ cmh_coronation_chain.004.desc:0 "Hidden Event"
+ cmh_coronation_chain.004.a:0 ""
+
+ cmh_coronation_chain.1000.t:0 "The coronation begins"
+ cmh_coronation_chain.1000.desc:0 "The time is now. After so much preparation and waiting, the [GetPlayer.Custom('GetReligiousFigurePerformingCoronation')] has arrived, and so have all of my guests. The day after now I will be a true [GetPlayer.GetTitleTierName], and nobody will be able to say otherwise!"
+ cmh_coronation_chain.1000.a:0 "Finally! We begin!"
+ cmh_coronation_chain.1000.a.tt:0 "You begin the coronation ceremony."
+
+ cmh_coronation_chain.1500.t
+ cmh_coronation_chain.1500.desc
+ cmh_coronation_chain.1500.a: "What is a name?"
+ cmh_coronation_chain.1500.a.tt: "Ponder your options"
+
+ cmh_coronation_chain.1501.t: ""
+ cmh_coronation_chain.1501.desc: ""
+ cmh_coronation_chain.1501.a: "You are not AI"
+ cmh_coronation_chain.1501.a.tt: "Please Report" 
+ 
+ coronation_chain.2000.t:0 "The Coronation"
+ coronation_chain.2000.desc:0 "The [GetPlayer.Custom('GetReligiousFigurePerformingCoronation')] says the words and so do I, and a sudden solemnity falls upon my gathered court. It feels so trivial in the moment, as they approach and lay the crown upon my head. As if some words will truly make me a [GetPlayer.GetTitleTierName]? But still, I can not deny the sudden rush that hits me as I rise before my people.\n\nWhile I entered today a [GetPlayer.GetWomanMan], I now leave a true [GetPlayer.GetTitleTierName]."
+ coronation_chain.2000.a:0 "None can doubt my right now."
+ coronation_chain.2000.a.tt:0 "You receive the [GetPlayer.Custom('GetCoronationTrait')] trait."
+ 
+ getting_coronated_by_head_of_religion_loc:0 "[GetPlayer.GetFaith.ReligiousHeadName]"
+ getting_coronated_by_high_priest_loc:0 "[GetPlayer.GetFaith.PriestMale]"
+ getting_coronated_by_bishop_loc:0 "[GetPlayer.GetFaith.BishopMale]"
+ 
+ # Concept
+ 
+ game_concept_coronation_desc:0 "Coronations are the transfer of the crown from the previous ruler to the new. Depending on the coronation [doctrine|E] the character's [faith|E] has, they will be expected to commit to different things for their coronation. This may involve a religious ceremony where they are crowned by their $game_concept_head_of_faith$ or a lesser spiritual leader, a simple $activity_feast$, or nothing at all. If a coronation is expected, failing to have one will give increased penalties to vassal opinion!"
+ game_concept_coronation:0 "Coronation"
+ game_concept_coronations:0 "Coronations"
+ 
+ # Alert
+ 
+ action_get_coronated_label:0 "You can host your [coronation|E]."
+ action_get_coronated:0 "You can host your [coronation|E]."
+ action_get_coronated_desc:0 "You can host your [coronation|E] ceremony, and remove the negative malus' that come from being uncrowned."
+ action_get_coronated_click:0 "#I Click to View Decision #!"
+ 
+ # Traits
+ 
+ trait_coronation:0 "Coronation"
+ 
+ trait_coronated_by_head_of_religion:0 "Coronated by [GetPlayer.GetFaith.ReligiousHeadName]"
+ coronated_by_head_of_religion_desc:0 "This ruler had their [coronation|E] performed by a [GetPlayer.GetFaith.ReligiousHeadName]. A truly grand gesture!"
+ coronated_by_head_of_religion_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] had [ROOT.GetCharacter.GetHerHis] [coronation|E] performed by a [GetPlayer.GetFaith.ReligiousHeadName]. A truly grand gesture!"
+ 
+ trait_coronated_by_high_priest:0 "Coronated by [GetPlayer.GetFaith.PriestMale]"
+ coronated_by_high_priest_desc:0 "This ruler had their [coronation|E] performed by a [GetPlayer.GetFaith.PriestMale]. Acceptable, if only."
+ coronated_by_high_priest_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] had [ROOT.GetCharacter.GetHerHis] [coronation|E] performed by a [GetPlayer.GetFaith.PriestMale]."
+ 
+ trait_coronated_by_bishop:0 "Coronated by [GetPlayer.GetFaith.BishopMale]"
+ coronated_by_bishop_desc:0 "This ruler had their [coronation|E] performed by a [GetPlayer.GetFaith.BishopMale]. Acceptable, if only."
+ coronated_by_bishop_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] had [ROOT.GetCharacter.GetHerHis] [coronation|E] performed by a [GetPlayer.GetFaith.BishopMale]. Acceptable, if only."
+ 
+ # Decisions
+ 
+ hold_coronation_decision:0 "Hold Coronation"
+ hold_coronation_decision_desc:0 "It is time to begin planning for my [coronation|E] ceremony."
+ hold_coronation_decision_tt:0 "Begin the preparations for your [coronation|E]"
+ hold_coronation_decision_confirm:0 "Begin Planning"
+ 
+ # Activity
+ 
+ activity_coronation_feast:0 "Coronation Feast"
+ activity_coronation_feast_name:0 "Coronation Feast"
+ 
+ # Modifiers
+ 
+ uncoronated_modifier_1:0 "Uncrowned"
+ uncoronated_modifier_2:0 "Uncrowned"
+ uncoronated_modifier_3:0 "Uncrowned"
+ uncoronated_modifier_4:0 "Uncrowned"
+ uncoronated_modifier_5:0 "Uncrowned"
+ uncoronated_modifier_6:0 "Uncrowned"
+ religious_coronation_high_cost:0 "Grand Religious Coronation"
+ religious_coronation_medium_cost:0 "Acceptable Religious Coronation"
+ religious_coronation_low_cost:0 "Adequate Religious Coronation"

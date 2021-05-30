@@ -1,0 +1,6 @@
+﻿coronation_feast_default_participant_trigger = {
+	is_ai = yes
+	NOT = { this = root }
+	is_alive = yes
+	is_imprisoned = no
+}
