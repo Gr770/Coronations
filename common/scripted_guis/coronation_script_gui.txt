@@ -1,0 +1,25 @@
+﻿coronation_select_char = {
+    scope = character
+    is_shown = { always = yes }
+    effect = {
+        if = {
+            limit = {
+                exists = var:coronation_selected_character
+                var:coronation_selected_character = scope:selected_char
+            }
+            remove_variable = coronation_selected_character
+        }
+        else = {
+            if = {
+                limit = {
+                    exists = var:coronation_selected_character
+                    NOT = {var:coronation_selected_character = scope:selected_char}
+                }
+            }
+            set_variable = {
+                name = coronation_selected_character
+                value = scope:selected_char
+            }
+        }
+    }
+}

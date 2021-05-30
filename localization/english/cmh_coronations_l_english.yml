@@ -1,0 +1,5 @@
+﻿l_english:
+cmh_coronations.001.t: "What is a Name?"
+cmh_coronations.001.desc: "    The name I have been given at birth has represented myself thus far, however I may be expected to take on a more #EMP regnal#! name. My legitimacy could be highlighted if I took upon the first name of one of my forebears.\n #BOL Select an ancestor to take a name."
+cmh_coronations.001.a: "I shall take this as my name!"
+cmh_coronations.001.b: "I shall keep [GetPlayer.GetFirstNameNoTooltip] as my name!"

@@ -1,0 +1,82 @@
+﻿widget = {
+	allow_outside = yes
+	name = "coronation_name_widget"
+	size = { 480 239 }
+	container = {
+		allow_outside = yes
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		position = { 0 0 }
+		ignoreinvisible = yes
+
+		datacontext = "[GetPlayer.MakeScope]"
+
+		vbox = {
+			allow_outside = yes
+			margin = { 3 3 }
+			expand = {}
+			
+			scrollbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				minimumsize = { 480 239 }
+
+				blockoverride "scrollbox_margins"
+				{
+					margin = { 10 15 }
+				}
+
+				blockoverride "scrollbox_content"
+				{
+					vbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('coronated_title_rulers')]"
+						layoutpolicy_horizontal = expanding
+
+						item = {
+							button_standard_clean = {
+								datacontext = "[Scope.GetCharacter]"
+								layoutpolicy_vertical = expanding
+								tooltipwidget = {
+									cooltip_type = {
+										blockoverride "interaction_info" {
+											text = "CHARACTER_TOOLTIP_INSTRUCTION"
+										}
+									}
+								}
+									
+								using = tooltip_ws
+								tooltip_offset = { 0 0 }
+								tooltip_verticalbehavior = slide
+								tooltip_horizontalbehavior = mirror
+
+								name = "background_button"
+								size = { 450 66 }
+								
+								onclick = "[GetScriptedGui('coronation_select_char').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_char', Character.MakeScope).End)]"
+								down = "[ObjectsEqual( Character.Self , GetPlayer.MakeScope.GetVariable('coronation_selected_character').GetCharacter.Self )]"
+
+								portrait_head_small = {
+									scale = 0.75
+									tooltip_enabled = no
+								}
+
+								text_single = {
+									name = "character_name"
+									text = "[Character.GetUINameNoTooltip]"
+									using = Font_Size_Medium
+									align = nobaseline
+
+									position = { 80 20 }
+								}
+								
+								expand = {}
+							}
+						}
+						
+						expand = {}
+					}
+				}
+			}
+		}
+	}
+}

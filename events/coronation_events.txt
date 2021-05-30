@@ -1,0 +1,74 @@
+namespace = cmh_coronations
+
+cmh_coronations.001 = {
+	type = character_event
+	theme = faith
+    title = cmh_coronations.001.t
+	desc = cmh_coronations.001.desc
+    right_portrait = root
+
+    immediate = {
+		save_scope_as = coronation_char
+        every_ancestor = {
+			even_if_dead = yes
+            limit = {
+                primary_title = root.primary_title
+				OR = {
+					AND = {
+						is_male = yes
+						scope:coronation_char = {
+							is_male = yes
+						}
+					}
+					AND = {
+						is_male = no
+						scope:coronation_char = {
+							is_male = no
+						}
+					}
+				}
+            }
+            scope:coronation_char = {
+				add_to_variable_list = {
+					name = coronated_title_rulers
+					target = prev
+				}
+			}
+        }
+    }
+
+	widget = {
+		gui = "coronation_name_widget"            
+		container = "custom_widgets_container"
+    }
+
+    option = {
+        name = cmh_coronations.001.a
+		if = {
+			limit = {
+				exists = var:coronation_selected_character
+			}
+			var:coronation_selected_character = {
+				save_scope_as = regal_name_char
+			}
+			scope:coronation_char = {
+				change_first_name = {
+					template_character  = scope:regal_name_char
+				}
+			}
+		}
+    }
+
+	option = {
+		name = cmh_coronations.001.b
+	}
+
+	after = {
+        every_in_list = {
+            variable = coronated_title_rulers
+            remove_variable = coronation_selecting_character
+        }
+        clear_variable_list = coronated_title_rulers
+        remove_variable = coronation_selected_character
+    }
+}
